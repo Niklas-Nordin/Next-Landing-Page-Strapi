@@ -1,3 +1,10 @@
+export type Company = {
+  id: number;
+  name: string;
+  slug: string;
+  primaryColor: string;
+};
+
 export type HeroSection = {
   __component: "sections.hero";
   id: number;
@@ -10,4 +17,5 @@ export type LandingPage = {
   title: string;
   slug: string;
   sections: HeroSection[];
+  company: Company;
 };

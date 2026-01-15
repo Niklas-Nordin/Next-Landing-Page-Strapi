@@ -1,4 +1,5 @@
 import { getLandingPage } from "@/lib/strapi";
+import {colors} from "@/lib/colors";
 import { LandingPage } from "@/types";
 
 interface HomeProps {
@@ -16,9 +17,11 @@ export default async function Home({ params }: HomeProps) {
   }
 
   const hero = landingPage.sections[0];
+  const companyInfo = landingPage.company;
+  const colorClass = colors[companyInfo.primaryColor];
 
   return (
-    <main>
+    <main className={` ${colorClass} min-h-screen flex flex-col items-center justify-center`}>
       <h1>{hero.heading}</h1>
       <p>{hero.subheading}</p>
     </main>
